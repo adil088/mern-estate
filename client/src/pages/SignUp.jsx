@@ -6,7 +6,6 @@ const SignUp = () => {
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false)
-  const [created, setCreated] = useState('')
 
   const handleChange = (e)=>{
     setFormData(
@@ -56,14 +55,13 @@ const SignUp = () => {
           {loading ? 'Loading...': 'Sign up'}
           </button>
       </form>
-      <div className="flex gpa-2 mt-5">
+      <div className="flex gap-2 mt-5">
         <p>Have an account?</p>
         <Link to={'/sign-in'}>
           <span className='text-blue-700'>Sign in</span>
         </Link>
       </div>
-      {error ? <p className='text-red-500 bt-5' >{error}</p>:
-      <p className='text-slate-700 bt-5' >{created}</p>
+      {error && <p className='text-red-500 bt-5' >{error}</p>
       }
     </div>
   )
