@@ -14,7 +14,12 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true,
+    },
+    avatar: {
+        type: String,
+        default: "hhttps://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg"
     }
+
 }, {timestamps: true});
 
 const User = mongoose.model('User', userSchema); // This must be singular
