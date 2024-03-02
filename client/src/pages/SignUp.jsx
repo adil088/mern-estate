@@ -35,8 +35,7 @@ const SignUp = () => {
         setLoading(false)
         return
       }
-      setLoading(false)  
-      setCreated('User created successfully')
+      setLoading(false)
       setError(null)    
       navigate('/sign-in')
     } catch (error) {
