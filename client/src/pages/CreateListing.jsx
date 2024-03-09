@@ -137,7 +137,7 @@ const CreateListing = () => {
       if(data.success === false){
         setError(data.message);
       }
-      navigate(`/listing/${data._id}`)
+      navigate(`/listings/${data._id}`)
     } catch (error) {
       setError(error.message)
       setLoading(false)
@@ -209,7 +209,7 @@ const CreateListing = () => {
               <input
                 type="number"
                 id="bedrooms"
-                min="1"
+                min="0"
                 max="10"
                 required
                 className="p-3 border border-gray-300 rounded-lg" onChange={handleChange} value={formData.bedrooms}
@@ -220,7 +220,7 @@ const CreateListing = () => {
               <input
                 type="number"
                 id="bathrooms"
-                min="1"
+                min="0"
                 max="10"
                 required
                 className="p-3 border border-gray-300 rounded-lg"
@@ -233,7 +233,7 @@ const CreateListing = () => {
                 type="number"
                 id="regularPrice"
                 min="50"
-                max="100000"
+                max="9999999999999"
                 required
                 className="p-3 border border-gray-300 rounded-lg"
                 onChange={handleChange} value={formData.regularPrice}
@@ -250,8 +250,8 @@ const CreateListing = () => {
               <input
                 type="number"
                 id="discountPrice"
-                min="0"
-                max="500"
+                min="10"
+                max="999999999"
                 required
                 className="p-3 border border-gray-300 rounded-lg"
                 onChange={handleChange} value={formData.discountPrice}

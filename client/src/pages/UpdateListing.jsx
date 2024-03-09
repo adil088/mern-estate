@@ -151,7 +151,7 @@ const UpdateListing = () => {
       if(data.success === false){
         setError(data.message);
       }
-      navigate(`/listing/${data._id}`)
+      navigate(`/listings/${data._id}`)
     } catch (error) {
       setError(error.message)
       setLoading(false)
@@ -247,7 +247,7 @@ const UpdateListing = () => {
                 type="number"
                 id="regularPrice"
                 min="50"
-                max="100000"
+                max="99999999999999"
                 required
                 className="p-3 border border-gray-300 rounded-lg"
                 onChange={handleChange} value={formData.regularPrice}
@@ -264,8 +264,8 @@ const UpdateListing = () => {
               <input
                 type="number"
                 id="discountPrice"
-                min="0"
-                max="500"
+                min="10"
+                max="99999999999999"
                 required
                 className="p-3 border border-gray-300 rounded-lg"
                 onChange={handleChange} value={formData.discountPrice}
